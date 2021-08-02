@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+		<title>Are you Worthy Enough to Get a Loan </title>
+		<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">	
+		<style>
+			body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+			body, html {
+			  height: 100%;
+			  color: #777;
+			  line-height: 1.8;
+			}
+			input[type=text] {
+  				width: 100%;
+  				padding: 12px 20px;
+  				margin: 8px 0;
+  				box-sizing: border-box;
+			}
+			button[type=submit] {
+  				width: 100%;
+  				background-color: #474747;
+  				color: white;
+  				padding: 14px 20px;
+  				margin: 8px 0;
+  				border: none;
+  				border-radius: 4px;
+  				cursor: pointer;
+			}
+			input[type=submit] {
+  				background-color: #474747;
+			}
+		</style>			
+		<body>
+			<h1 style="text-align:center"> Are you Worthy Enough to Get a Loan</h1>
+			<div class="login">
+				<form  action="{{ url_for('predict')}}"method="post">
+					<h2>Please select your gender</h2>
+						<input type="radio" id="1" name="gender" value = "1"required/>
+                		<label for="Male">Male</label><br>
+						<input type="radio" id = "0" name="gender" value = "0"/>
+                        <label for="Female">Female</label><br>
+					<h2>Are you Married ?</h2>
+						<input type="radio" id = "1" name="Married" value = "1"required/>Yes<br>
+						<input type="radio" id = "0" name="Married" value = "0"/> No<br>
+					<h2> How's your Education ?</h2>
+						<input type="radio" id = "1" name="Education" value = "1"required/>Graduated<br>
+                
+						<input type="radio" id = "0" name="Education" value = "0"/> Not Graduated
+                
+						<br />
+					<h2>Are you self employed ?</h2>
+						<input type="radio" id = "1" name="Self Employed" value = "1" required/>Yes<br>
+               
+						<input type="radio" id = "0" name="Self Employed" value = "0"/> No
+               
+						<br />
+					<h2> How much your income ?</h2>
+					<input type="text" name="ApplicantIncome"  placeholder="Applicant Income" required="required" />
+					<br />
+					<h2> How much your Partner income ?</h2>
+					<input type="text" name="CoapplicantIncome"  placeholder="Coapplicant Income" required="required" />
+					<br />
+					<h2> Loan Amount Requested</h2>
+					<input type="text" name="LoanAmount"  placeholder="Loan Amount" required="required" />
+					<br />
+					<h2>How many days over which the loan will be paid</h2>
+					<input type="text" name="Loan_Amount_Term"  placeholder="Loan Amount Term" required="required" />
+					<br />
+					<h2>Have you paid all your debts</h2>
+					<input type="radio" name="Credit History" value = "1"required/>Yes, i have all my debts paid<br>
+               
+					<input type="radio" name="Credit History" value = "0"required/> No, i haven't paid all my debts
+               
+					<br />
+					<h2> Choose your Property  Area</h2>
+					<input type="radio" id="0" name="PropertyArea" value="0"required>
+					<label for="Rural">Rural</label><br>
+					<input type="radio" id="1" name="PropertyArea" value="1">
+					<label for="Semiurban">Semiurban</label><br>
+					<input type="radio" id="2" name="PropertyArea" value="2">
+					<label for="Urban">Urban</label><br>
+					<h2> How Many Dependents Do You Have</h2>
+					<input type="radio" id="0" name="Dependents" value="0"required>
+					<label for="None">None</label><br>
+					<input type="radio" id="1" name="Dependents" value="1">
+					<label for="1">1</label><br>
+					<input type="radio" id="2" name="Dependents" value="2">
+					<label for="2">2</label><br>
+					<input type="radio" id="3+" name="Dependents" value="3">
+					<label for="3 and above">3 and above</label>
+					<br>
+					<br>
+					<button type="submit" class= "btn btn-primary btm-block btn-large">Submit</button>
+				</form>
+				<br>
+				<br>
+                    <h1>{{output}}</h1>
+    
+					</div>
+				</body>
+			</html>
